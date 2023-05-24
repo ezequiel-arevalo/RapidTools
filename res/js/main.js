@@ -1,7 +1,13 @@
 var app = new Vue({
   el: '.app',
-  data: {    
-    titulo1: "To-Do List", // Contenido para el título
-    titulo2: "Password Generator", // Contenido para el título
+  data: {
+    ventanaActual: 'componente1',
+    titulo1: "To-Do List",
+    titulo2: "Password Generator",
+  },
+  methods: {
+    cambiarVentana(ventana){
+      this.ventanaActual = ventana;
+    }
   },
 });

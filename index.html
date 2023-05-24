@@ -12,9 +12,9 @@
 <body>
     
     <div class="contenedor">
-        <div class="app" v-cloak >
-            <componente-header></componente-header>
-            <componente-main></componente-main>
+        <div class="app">
+            <componente-header v-bind:titulo1="titulo1" v-bind:titulo2="titulo2" v-on:cambiar-ventana="cambiarVentana"></componente-header>
+            <componente-main v-bind:ventana-actual="ventanaActual"></componente-main>
             <componente-footer></componente-footer>
         </div>
     </div>
