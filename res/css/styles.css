@@ -194,7 +194,14 @@ footer > div > p{
 
 /*Contenedor de tareas creadas y/o existentes*/
 #Tareas-Mostrar{
+  overflow-y: auto;
+  max-height: 470px;
+  box-sizing: border-box;
   margin-top: 20px;
+}
+
+#Tareas-Mostrar::-webkit-scrollbar{
+  display: none;
 }
 
 #Tareas-Mostrar > ul{
@@ -236,8 +243,25 @@ footer > div > p{
   transform: scale(1.1);
   color: crimson;
 }
-/*Componente 2*/
 
+/*Componente 2*/
+#Password-Container{
+  max-width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.2);
+  border: 1.3px solid rgba(255, 255, 255, 0.3);
+  border-bottom: none;
+  border-radius: 0px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
 /*
 Password Generator | Error message
 */
