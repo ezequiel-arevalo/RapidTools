@@ -46,7 +46,7 @@ Vue.component('componente-1', {
   <div>
     <div id="Tareas-Container">
       <input v-model="nuevaTarea" type="text" placeholder="Agregar una tarea" id="input-tareas" v-on:keyup.enter="crearTarea">
-      <button v-on:click="crearTarea">Crear Tarea</button>
+      <button v-on:click="crearTarea" id="button-tareas">Crear Tarea</button>
     </div>
     <div id="Tareas-Mostrar">
       <ul>
