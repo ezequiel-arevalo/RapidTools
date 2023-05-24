@@ -6,7 +6,7 @@ Vue.component('componente-header', {
     }
   },
   template: `
-    <header>
+    <header id="Cabecera">
       <nav>
         <ul>
           <li @click="cambiarVentana('componente1')"><a href="#">{{ titulo1 }}</a></li>

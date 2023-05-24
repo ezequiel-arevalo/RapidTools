@@ -2,7 +2,7 @@ Vue.component('componente-main', {
   props: ['ventanaActual'],
   template: 
   `
-  <main>
+  <main id="Contenido-Principal">
     <componente-1 v-if="ventanaActual === 'componente1'"></componente-1>
     <componente-2 v-if="ventanaActual === 'componente2'"></componente-2>
   </main>
@@ -118,7 +118,7 @@ Vue.component('componente-2', {
   `
   <div id="Password-Container">
     <input type="text" v-model="resultado" readonly />
-    <span v-bind:class="{ mostrarError ? 'msg-error-hidden' : 'msg-error-view' }">Debes Seleccionar al menos una opción!</span>
+    <span v-bind:class="{ 'msg-error-hidden': !mostrarError, 'msg-error-visible': mostrarError }">Debes Seleccionar al menos una opción!</span>
     <div id="Options-Container">
       <div class="Options-Row">
         <label>Letras Mayúsculas: </label>
