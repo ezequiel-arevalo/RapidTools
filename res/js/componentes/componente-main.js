@@ -68,7 +68,7 @@ Vue.component('componente-1', {
 Vue.component('componente-2', {
   data() {
     return {
-      longitud: 8,
+      longitud: 10,
       usarMayusculas: true,
       usarMinusculas: true,
       usarNumeros: true,
@@ -124,8 +124,8 @@ Vue.component('componente-2', {
     <div id="password-controls">
       <input type="text" v-model="resultado" id="input-password" readonly />
       <button v-on:click="crearPassword" id="button-generar">Generar</button>
-      <span v-bind:class="{ 'msg-error-hidden': !mostrarError, 'msg-error-visible': mostrarError }">Debes Seleccionar al menos una opción!</span>
     </div>
+    <span v-bind:class="{ 'msg-error-hidden': !mostrarError, 'msg-error-visible': mostrarError }">Debes Seleccionar al menos una opción!</span>
     <div id="Options-Container">
       <div class="Options-Row">
         <label>Letras Mayúsculas: </label>
