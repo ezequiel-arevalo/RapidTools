@@ -25,7 +25,8 @@ Vue.component('componente-1', {
       }
     },
     borrarTarea: function(tarea) {
-      
+      this.tareas.splice(tarea, 1);
+      this.guardarTarea();
     },
     guardarTarea: function() {
       localStorage.setItem('tareas', JSON.stringify(this.tareas));
