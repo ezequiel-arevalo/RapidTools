@@ -70,6 +70,7 @@ Vue.component('componente-2', {
       usarNumeros: true,
       usarCaracteres: true,
       resultado: '',
+      mostrarError: false,
     };
   },
   methods: {
@@ -98,19 +99,26 @@ Vue.component('componente-2', {
         contrasena += Caracteres;
       }
 
-      for (let i = 0; i < this.longitud; i++) {
-        const generador = Math.floor(Math.random() * contrasena.length);      
-        contrasenaFinal += contrasena[generador];  
-      }
+      if (contrasena === '') {
+        this.mostrarError = true;
+        this.resultado = '';
+      } else {
+        this.mostrarError = false;
 
-      this.resultado = contrasenaFinal;
+        for (let i = 0; i < this.longitud; i++) {
+          const generador = Math.floor(Math.random() * contrasena.length);      
+          contrasenaFinal += contrasena[generador];  
+        }
+
+        this.resultado = contrasenaFinal;
+      }
     }
   },
   template: 
   `
   <div id="Password-Container">
     <input type="text" v-model="resultado" readonly />
-    
+    <span v-bind:class="{ mostrarError ? 'msg-error-hidden' : 'msg-error-view' }">Debes Seleccionar al menos una opción!</span>
     <div id="Options-Container">
       <div class="Options-Row">
         <label>Letras Mayúsculas: </label>
