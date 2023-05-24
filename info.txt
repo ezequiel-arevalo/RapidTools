@@ -1,0 +1,4 @@
+Prefixes CSS: https://autoprefixer.github.io/
+Generador de Fondos: https://webgradients.com/ && https://keyframes.app/animate
+Generador de GlassMorphism Effect: https://css.glass/
+Svg: https://icons.getbootstrap.com/icons/trash3/
