@@ -63,22 +63,80 @@ Vue.component('componente-1', {
 Vue.component('componente-2', {
   data() {
     return {
-      tareas: [],
-      nuevaTarea: ''
+      longitud: 8,
+      usarMayusculas: true,
+      usarMinusculas: true,
+      usarNumeros: true,
+      usarCaracteres: true,
+      resultado: '',
     };
   },
   methods: {
-    crearTarea: function() {
+    crearPassword: function() {
+      const Mayusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const Minusculas = 'abcdefghijklmnopqrstuvwxyz';
+      const Numeros = '0123456789';
+      const Caracteres = '!@#$%^&*()_+-';
+
+      let contrasena = '';
+      let contrasenaFinal = '';
+
+      if (this.usarMayusculas) {
+        contrasena += Mayusculas;
       }
-    },
-    borrarTarea: function(tarea) {
-      
-    },
-    guardarTarea: function() {
-    },
+
+      if (this.usarMinusculas) {
+        contrasena += Minusculas;
+      }
+
+      if (this.usarNumeros) {
+        contrasena += Numeros;
+      }
+
+      if (this.usarCaracteres) {
+        contrasena += Caracteres;
+      }
+
+      for (let i = 0; i < this.longitud; i++) {
+        const generador = Math.floor(Math.random() * contrasena.length);      
+        contrasenaFinal += contrasena[generador];  
+      }
+
+      this.resultado = contrasenaFinal;
+    }
+  },
   template: 
   `
-  <div>
+  <div id="Password-Container">
+    <input type="text" v-model="resultado" readonly />
+    
+    <div id="Options-Container">
+      <div class="Options-Row">
+        <label>Letras Mayúsculas: </label>
+        <input type="checkbox" v-model="usarMayusculas" checked>
+      </div>
+      <div class="Options-Row">
+        <label>Letras Minúsculas: </label>
+        <input type="checkbox" v-model="usarMinusculas" checked>
+      </div>
+      <div class="Options-Row">
+        <label>Números: </label>
+        <input type="checkbox" v-model="usarNumeros" checked>
+      </div>
+      <div class="Options-Row">
+        <label>Caracteres Especiales: </label>
+        <input type="checkbox" v-model="usarCaracteres" checked>
+      </div>
+    </div>
+
+    <div id="Options-Range">
+      <div>
+        <label>Longitud: {{ longitud }}</label>
+        <input type="range" min="1" max="64" v-model="longitud">
+      </div>
+    </div>
+
+    <button v-on:click="crearPassword">Generar Contraseña</button>
   </div>
   `
 });
