@@ -378,13 +378,149 @@ Password Generator | Error message
 }
 
 /*Componente contacto*/
-#contacto {
+#form {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  padding: 15px;
+  gap: 10px;
+  max-width: 450px;
+  padding: 20px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1.3px solid rgba(255, 255, 255, 0.3);
+  border-bottom: none;
+}
+
+.message {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+  margin: 10px 0px;
+}
+
+#form h2{
+  text-align: center;
+}
+
+#form label {
+  position: relative;
+  margin: 10px 0px;
+}
+
+#form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1.3px solid rgba(255, 255, 255, 0.3);
+  border-bottom: none;
+}
+
+#form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: black;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+#form label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+#form label .input:focus + span,#form label .input:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+#form label .input:valid + span {
+  color: green;
+}
+
+.input01 {
+  resize: none;
+  min-height: 200px;
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1.3px solid rgba(255, 255, 255, 0.3);
+  border-bottom: none;
+}
+
+#form label .input01 + span {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: black;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+  
+}
+
+#form label .input01:placeholder-shown + span {
+  top: 40px;
+  font-size: 0.9em;
+}
+
+#form label .input01:focus + span,#form label .input01:valid + span {
+  top: 180px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+#form label .input01:valid + span {
+  color: green;
+}
+
+.fancy {
+  border-radius: 0px;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 390;
+  letter-spacing: 2px;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  outline: none;
+  overflow: visible;
+  padding: 8px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1.3px solid rgba(255, 255, 255, 0.3);
+  border-bottom: none;
+}
+
+.fancy:hover{
+  color: white;
+  background: green;
 }

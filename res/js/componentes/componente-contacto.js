@@ -7,25 +7,36 @@ Vue.component('componente-contacto', {
       };
     },
     template: `
-      <div id="contacto">
-        <h1>Formulario de Contacto</h1>
-        <form v-on:click.prevent>
-          <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" v-model="nombre" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" v-model="email" required>
-          </div>
-          <div class="form-group">
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" v-model="mensaje" required></textarea>
-          </div>
-          <div class="form-group">
-            <button type="submit" >Enviar</button>
-          </div>
-        </form>
-      </div>
+    <form id="form" v-on:submit.prevent method="POST">
+      <h2>Formulario de Contacto</h2>
+        <div class="flex">
+            <label>
+                <input required="" placeholder="" type="text" class="input">
+                <span>first name</span>
+            </label>
+
+            <label>
+                <input required="" placeholder="" type="text" class="input">
+                <span>last name</span>
+            </label>
+        </div>  
+                
+        <label>
+            <input required="" placeholder="" type="email" class="input">
+            <span>email</span>
+        </label> 
+            
+        <label>
+            <input required="" type="tel" placeholder="" class="input">
+            <span>contact number</span>
+        </label>
+
+        <label>
+            <textarea required="" rows="3" placeholder="" class="input01"></textarea>
+            <span>message</span>
+        </label>
+        
+        <button type="submit" class="fancy">Enviar</button>
+    </form>
     `,
-  });
+});
