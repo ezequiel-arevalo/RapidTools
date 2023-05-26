@@ -13,15 +13,19 @@ Vue.component('componente-1', {
   data() {
     return {
       tareas: [],
-      nuevaTarea: ''
+      nuevaTarea: '',
+      mostrarError: false,
     };
   },
   methods: {
     crearTarea: function() {
       if (this.nuevaTarea.trim() !== '') {
         this.tareas.push({nombre: this.nuevaTarea, completada: false});
+        this.mostrarError = false;
         this.nuevaTarea = '';
         this.guardarTarea();
+      } else {
+        this.mostrarError = true;
       }
     },
     borrarTarea: function(tarea) {
@@ -36,18 +40,19 @@ Vue.component('componente-1', {
       if (tareasGuardadas) {
         this.tareas = JSON.parse(tareasGuardadas);
       }
-    }
+    },
   },
   created() {
     this.cargarTarea();
   },
   template: 
   `
-  <div>
+  <div id="Tareas">
     <div id="Tareas-Container">
       <input v-model="nuevaTarea" type="text" placeholder="Agregar una tarea" id="input-tareas" v-on:keyup.enter="crearTarea">
       <button v-on:click="crearTarea" id="button-tareas">Crear Tarea</button>
     </div>
+    <span v-bind:class="{ 'msg-error-hidden': !mostrarError, 'msg-error-visible': mostrarError }">Debes ingresar al menos una tarea!</span>
     <div id="Tareas-Mostrar">
       <ul>
         <li v-for="(tarea, index) in tareas" :key="index">

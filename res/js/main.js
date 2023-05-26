@@ -4,6 +4,7 @@ var app = new Vue({
     ventanaActual: 'componente1',
     titulo1: "To-Do List",
     titulo2: "Password Generator",
+    titulo3: "Contact",
   },
   methods: {
     cambiarVentana(ventana){
