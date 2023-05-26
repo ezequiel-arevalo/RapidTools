@@ -9,9 +9,9 @@ Vue.component('componente-header', {
     <header id="Cabecera">
       <nav>
         <ul>
-          <li v-on:click="cambiarVentana('componente1')"><a href="../../index.html">{{ titulo1 }}</a></li>
-          <li v-on:click="cambiarVentana('componente2')"><a href="#">{{ titulo2 }}</a></li>
-          <li><a href="../../contacto.html">{{ titulo3 }}</a></li>
+          <li v-on:click="cambiarVentana('componente1')"><a href="../../index.html">{{ titulo1 | uppercase }}</a></li>
+          <li v-on:click="cambiarVentana('componente2')"><a href="#">{{ titulo2 | uppercase  }}</a></li>
+          <li><a href="../../contacto.html">{{ titulo3 | uppercase  }}</a></li>
         </ul>
       </nav>
     </header>
